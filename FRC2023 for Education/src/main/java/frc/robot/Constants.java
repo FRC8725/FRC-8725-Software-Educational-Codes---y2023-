@@ -6,14 +6,7 @@ package frc.robot;
 
 public final class Constants {
 
-    public final class dirver {
-        public final static int MOTOR = 9;
+    public static final class DriveConstants {
+        public static final double kMotor_deadline = 0.05;
     }
-    
-    public final class Joystick {
-        public final static int JOYSTICK_A = 0;
-
-        public final static int raw = 0;
-    }
-
 }

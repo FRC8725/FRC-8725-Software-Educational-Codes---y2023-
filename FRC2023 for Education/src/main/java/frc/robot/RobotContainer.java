@@ -4,10 +4,10 @@
 
 package frc.robot;
 
-import frc.robot.Constants.dirver;
-import frc.robot.subsystems.DriverTableSub;
-import frc.robot.commands.DriveCommand;
+import frc.robot.commands.DriveJoystickCmd;
+import frc.robot.subsystems.DriveMotorSubststem;
 import frc.robot.Constants;
+import frc.robot.GamepadJoystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -16,12 +16,15 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
 
-  private final DriverTableSub Subsystem = new DriverTableSub();
+  private final DriveMotorSubststem DriveSubsystem = new DriveMotorSubststem();
+
+  private final Joystick driverJoytick = new Joystick(GamepadJoystick.kDriverControllerPort);
 
 
   public RobotContainer() {
 
-    Subsystem.setDefaultCommand(new DriveCommand(Subsystem));
+    DriveSubsystem.setDefaultCommand(new DriveJoystickCmd(
+      DriveSubsystem, () -> driverJoytick.getRawAxis(GamepadJoystick.kDriverYAxis)));
 
     configureBindings();
   }
