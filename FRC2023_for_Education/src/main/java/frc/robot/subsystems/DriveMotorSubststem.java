@@ -11,18 +11,18 @@ import frc.robot.robotMap;
 
 public class DriveMotorSubststem extends SubsystemBase {
 
-    private static DriveMotorModule m_Motor= new DriveMotorModule( 
-            robotMap.DriverPort.PWM_Port.kMotorPort, 
-            robotMap.DriverPort.DIO_Port.kMotorPort, 
-            false);
+    private static DriveMotorModule m_Motor ;
     // static Encoder m_DriverEncoder;
 
     public DriveMotorSubststem() {
-
+        m_Motor = new DriveMotorModule( 
+            robotMap.DriverPort.PWM_Port.kMotorPort, 
+            robotMap.DriverPort.DIO_Port.kMotorPort, 
+            false);
     }
 
-    public void move(Double axis_input) {
-        m_Motor.setDesiredState(axis_input);
+    public void move(Double speed) {
+        m_Motor.setDesiredState(speed);
     }
 
     // public void Encoder_Zero() {

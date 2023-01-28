@@ -8,5 +8,7 @@ public final class Constants {
 
     public static final class DriveConstants {
         public static final double kMotor_deadline = 0.05;
+
+        public static final double kSpeed = 0.7;
     }
 }

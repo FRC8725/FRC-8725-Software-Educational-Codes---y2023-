@@ -7,7 +7,7 @@ public class robotMap {
         }
 
         public class DIO_Port {
-            public static final int kMotorPort = 8;
+            public static final int kMotorPort = 0;
         }
     }
 }
