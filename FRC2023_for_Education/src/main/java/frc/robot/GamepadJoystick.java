@@ -6,4 +6,5 @@ public class GamepadJoystick {
 
     // Joystick Axis / Button ID
     public static final int kDriverYAxis = 1;
+    public static final int kZeroEncoderButton = 2;
 }

@@ -6,23 +6,22 @@ package frc.robot.commands;
 
 import java.util.function.Supplier;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveMotorSubststem;
+import frc.robot.subsystems.DriveMotorSubsystem;
 import frc.robot.Constants;
 
 
-/** An example command that uses an example subsystem. */
 public class DriveJoystickCmd extends CommandBase {
 
 
-  private final DriveMotorSubststem MotorSubsystem;
+  private final DriveMotorSubsystem MotorSubsystem;
   private final Supplier<Double> SpeedFunction;
 
 
-  public DriveJoystickCmd(DriveMotorSubststem subsystem, Supplier<Double> SpeedFunction) {
+  public DriveJoystickCmd(DriveMotorSubsystem subsystem, Supplier<Double> SpeedFunction) {
 
     MotorSubsystem = subsystem;
     this.SpeedFunction = SpeedFunction;
-
+    
     addRequirements(MotorSubsystem);
   }
 

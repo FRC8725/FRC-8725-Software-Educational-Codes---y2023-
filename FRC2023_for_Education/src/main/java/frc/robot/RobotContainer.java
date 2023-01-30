@@ -5,33 +5,34 @@
 package frc.robot;
 
 import frc.robot.commands.DriveJoystickCmd;
-import frc.robot.subsystems.DriveMotorSubststem;
+import frc.robot.subsystems.DriveMotorSubsystem;
 import frc.robot.Constants;
 import frc.robot.GamepadJoystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 
 
 public class RobotContainer {
 
-  private final DriveMotorSubststem DriveSubsystem = new DriveMotorSubststem();
+  private final DriveMotorSubsystem DriveSubsystem = new DriveMotorSubsystem();
 
   private final Joystick driverJoytick = new Joystick(GamepadJoystick.kDriverControllerPort);
 
 
   public RobotContainer() {
 
-    DriveSubsystem.setDefaultCommand(new DriveJoystickCmd(
-      DriveSubsystem, () -> driverJoytick.getRawAxis(GamepadJoystick.kDriverYAxis)));
+    DriveSubsystem.setDefaultCommand(new DriveJoystickCmd(DriveSubsystem, 
+      () -> driverJoytick.getRawAxis(GamepadJoystick.kDriverYAxis)));
 
     configureBindings();
   }
 
 
   private void configureBindings() {
-
+      new JoystickButton(driverJoytick, GamepadJoystick.kZeroEncoderButton).whenPressed(() -> DriveSubsystem.Encoder_Zero());
   }
 
   /*

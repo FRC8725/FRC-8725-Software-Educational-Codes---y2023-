@@ -10,5 +10,9 @@ public final class Constants {
         public static final double kMotor_deadline = 0.05;
 
         public static final double kSpeed = 0.7;
+
+        public static final double kEncoder_Pulse = 526.;
+        public static final double kMotor_Perimeter = 4.;
+        public static final double kMax_Period = .1;
     }
 }
