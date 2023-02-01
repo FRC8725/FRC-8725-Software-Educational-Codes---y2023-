@@ -3,12 +3,10 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.subsystems.DriveMotorModule;
 import frc.robot.robotMap;
-import edu.wpi.first.wpilibj.Encoder;
 
 public class DriveMotorSubsystem extends SubsystemBase {
 
-    private static DriveMotorModule m_Motor ;
-    static Encoder m_DriverEncoder;
+    private static DriveMotorModule m_Motor;
 
     public DriveMotorSubsystem() {
         m_Motor = new DriveMotorModule( 
@@ -22,7 +20,7 @@ public class DriveMotorSubsystem extends SubsystemBase {
     }
 
     public void Encoder_Zero() {
-        m_DriverEncoder.reset();
+        m_Motor.ResetEncoder();
     }
 
     public void stopModules() {
