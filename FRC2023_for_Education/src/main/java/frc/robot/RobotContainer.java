@@ -8,19 +8,25 @@ import frc.robot.commands.DriveJoystickCmd;
 import frc.robot.commands.DriveButtonMotorCmd;
 import frc.robot.subsystems.DriveMotorSubsystem;
 
+import frc.robot.commands.NEOJoystickCmd;
+import frc.robot.subsystems.NeoMotorSubsystem;
+
 
 
 public class RobotContainer {
 
   private final DriveMotorSubsystem DriveSubsystem = new DriveMotorSubsystem();
+  private final NeoMotorSubsystem NeoSubsystem = new NeoMotorSubsystem();
 
   private final GamepadJoystick driverJoytick = new GamepadJoystick(0);
-
 
   public RobotContainer() {
 
     DriveSubsystem.setDefaultCommand(new DriveJoystickCmd(DriveSubsystem, 
       () -> driverJoytick.get_LStickY()));
+
+    NeoSubsystem.setDefaultCommand(new NEOJoystickCmd(NeoSubsystem,
+      () -> driverJoytick.get_RStickY()));
 
     configureBindings();
   }
@@ -29,7 +35,7 @@ public class RobotContainer {
   private void configureBindings() {
       // If commands reflect, roborio will do the latest one
       // "Trigger.whileTrue()" has priority over "setDefaultCommand"
-       
+
       driverJoytick.btn_A.whileTrue(new DriveButtonMotorCmd(DriveSubsystem,1));
       driverJoytick.btn_B.whileTrue(new DriveButtonMotorCmd(DriveSubsystem,2));
   }

@@ -9,5 +9,9 @@ public class robotMap {
         public class DIO_Port {
             public static final int kMotorPort = 0;
         }
+
+        public class CAN_Port {
+            public static final int kNEOMotorPort = 1;
+        }
     }
 }
