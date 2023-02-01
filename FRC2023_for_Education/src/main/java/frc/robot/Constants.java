@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.math.util.Units;
+
 public final class Constants {
 
     public static final class DriveConstants {
@@ -14,5 +16,11 @@ public final class Constants {
         public static final double kEncoder_Pulse = 526.;
         public static final double kMotor_Perimeter = 4.;
         public static final double kMax_Period = .1;
+    }
+
+    public static final class CANMotorConstants {
+        public static final double kWheelDiameterMeters = Units.inchesToMeters(4);
+        public static final double kDriveEncoderRot2Meter = kWheelDiameterMeters * Math.PI * kWheelDiameterMeters;
+        public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter / 60;
     }
 }

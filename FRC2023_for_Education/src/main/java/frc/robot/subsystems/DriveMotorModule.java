@@ -30,25 +30,25 @@ public class DriveMotorModule {
     public void setDesiredState(Double speed) {
         this.speed = speed;
         Motor.set(speed * Constants.DriveConstants.kSpeed);
-        pushDashboard();
+        putDashboard();
     }
 
     public void stop() {
         Motor.set(0);
-        pushDashboard();
+        putDashboard();
     }
 
     public void DriveDistance() {
         distance = Motor_Encoder.getDistance();
-        pushDashboard();
+        putDashboard();
     }
 
     public void ResetEncoder() {
         Motor_Encoder.reset();
-        pushDashboard();
+        putDashboard();
     }
 
-    public void pushDashboard() {
+    public void putDashboard() {
         SmartDashboard.putNumber("Speed: ", speed * Constants.DriveConstants.kSpeed);
         SmartDashboard.putNumber("Motor ", distance);
     }
