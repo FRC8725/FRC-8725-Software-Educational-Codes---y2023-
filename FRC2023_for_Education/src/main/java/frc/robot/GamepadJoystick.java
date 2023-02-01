@@ -13,6 +13,8 @@ public class GamepadJoystick extends Joystick{
 
     public Trigger btn_A = new JoystickButton(this, 2);
     public Trigger btn_B = new JoystickButton(this, 3);
+    public Trigger btn_X = new JoystickButton(this, 1);
+    public Trigger btn_Y = new JoystickButton(this, 4);
 
     public double get_LStickY() {
         return getRawAxis(1);

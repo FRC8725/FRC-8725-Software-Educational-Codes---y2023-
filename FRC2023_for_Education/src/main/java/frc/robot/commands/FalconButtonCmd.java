@@ -1,14 +1,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.DriveMotorSubsystem;
+import frc.robot.subsystems.FalconMotorSubsystem;
 import frc.robot.Constants;
 
-public class DriveButtonMotorCmd extends CommandBase {
-    private final DriveMotorSubsystem MotorSubsystem;
+public class FalconButtonCmd extends CommandBase {
+    private final FalconMotorSubsystem MotorSubsystem;
     private int mode;
 
-    public DriveButtonMotorCmd(DriveMotorSubsystem subsystem, int mode) {
+    public FalconButtonCmd(FalconMotorSubsystem subsystem, int mode) {
 
         MotorSubsystem = subsystem;
         this.mode = mode;
@@ -38,3 +38,4 @@ public class DriveButtonMotorCmd extends CommandBase {
     return false;
   }
 }
+

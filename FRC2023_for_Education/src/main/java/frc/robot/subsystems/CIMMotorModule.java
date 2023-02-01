@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Encoder;
 
 
-public class DriveMotorModule {
+public class CIMMotorModule {
 
     private PWMVictorSPX Motor;
     
@@ -16,7 +16,7 @@ public class DriveMotorModule {
     private double distance;
     private double speed;
 
-    public DriveMotorModule(int Motor_Port, int Encoder_Port ,boolean Direction) {
+    public CIMMotorModule(int Motor_Port, int Encoder_Port ,boolean Direction) {
         Motor = new PWMVictorSPX(Motor_Port);
 
         Motor.setInverted(Direction);

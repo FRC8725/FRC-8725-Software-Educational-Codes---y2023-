@@ -24,8 +24,8 @@ public class NeoMotorModule {
         CANMotor.setInverted(reverse);
 
         Encoder = CANMotor.getEncoder();
-        Encoder.setPositionConversionFactor(Constants.CANMotorConstants.kDriveEncoderRot2Meter);
-        Encoder.setVelocityConversionFactor(Constants.CANMotorConstants.kDriveEncoderRPM2MeterPerSec);
+        Encoder.setPositionConversionFactor(Constants.NEOMotorConstants.kDriveEncoderRot2Meter);
+        Encoder.setVelocityConversionFactor(Constants.NEOMotorConstants.kDriveEncoderRPM2MeterPerSec);
 
 
     }
@@ -44,8 +44,8 @@ public class NeoMotorModule {
     }
 
     public void setDesiredState(double speed) {
-        speed_input = speed * Constants.CANMotorConstants.kSpeed;
-        CANMotor.set(speed * Constants.CANMotorConstants.kSpeed);
+        speed_input = speed * Constants.NEOMotorConstants.kSpeed;
+        CANMotor.set(speed * Constants.NEOMotorConstants.kSpeed);
         putDashBoard();
     }
 

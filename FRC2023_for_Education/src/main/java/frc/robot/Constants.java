@@ -11,18 +11,26 @@ public final class Constants {
     public static final class DriveConstants {
         public static final double kMotor_deadline = 0.05;
 
-        public static final double kSpeed = 0.7;
+        public static final double kSpeed = 0.3;
 
         public static final double kEncoder_Pulse = 526.;
         public static final double kMotor_Perimeter = 4.;
         public static final double kMax_Period = .1;
     }
 
-    public static final class CANMotorConstants {
+    public static final class NEOMotorConstants {
         public static final double kWheelDiameterMeters = Units.inchesToMeters(4);
         public static final double kDriveEncoderRot2Meter = kWheelDiameterMeters * Math.PI * kWheelDiameterMeters;
         public static final double kDriveEncoderRPM2MeterPerSec = kDriveEncoderRot2Meter / 60;
 
-        public static final double kSpeed = 0.7;
+        public static final double kSpeed = 0.3;
+    }
+
+    public static final class FalconMotorConstants {
+        public static final double gearRatio = 1.;
+
+        public static final double kSpeed = 0.2;
+
+        public static final double kCircumstance = 50;
     }
 }

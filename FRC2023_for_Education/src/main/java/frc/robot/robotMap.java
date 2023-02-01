@@ -12,6 +12,7 @@ public class robotMap {
 
         public class CAN_Port {
             public static final int kNEOMotorPort = 1;
+            public static final int kFalconMotorPort = 2;
         }
     }
 }
